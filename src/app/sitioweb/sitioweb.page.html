@@ -1,13 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>sitioweb</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <div class="custom-content-header">
     <ion-toolbar>
-      <ion-title size="large">sitioweb</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>RADIO FUEGO 99.1 FM</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </div>
+  <iframe src="https://hmradiofuego.com/portal/" width="100%" height="100%" style="border: none;">
+  </iframe>
 </ion-content>

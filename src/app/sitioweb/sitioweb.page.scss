@@ -1,0 +1,107 @@
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Fondo general */
+.background {
+    position: fixed;
+    /* Fijo para ocupar siempre toda la pantalla */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* Elimina el scroll */
+}
+
+/* Encabezado personalizado */
+.headercustom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Imagen de fondo */
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Capa de superposición */
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    /* Más oscuro para resaltar contenido */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* Contenido centrado */
+.content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    width: 100px;
+    /* Tamaño del logo */
+    height: auto;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+
+
+
+
+.custom-content-header {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fondo oscuro con opacidad */
+    color: white;
+    padding: 3px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.custom-content-header ion-toolbar {
+    --background: transparent;
+    /* Fondo transparente para toolbar */
+}
+
+.custom-content-header ion-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    /* Texto blanco para el título */
+}
+
+.custom-content-header ion-buttons ion-button {
+    color: white;
+    /* Asegurarse de que los botones también sean blancos */
+}
+
