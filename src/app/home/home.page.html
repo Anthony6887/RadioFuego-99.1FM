@@ -14,7 +14,6 @@
     </ion-toolbar>
   </div>
 
-  <!-- Contenido principal -->
   <div class="background">
     <img src="assets/micro.jpg" alt="Micrófono" class="background-image" />
     <div class="overlay"></div>
@@ -25,29 +24,16 @@
       <h2>99.1 FM</h2>
       <p>Desde Zaruma – El Oro</p>
 
-      <!-- Texto "En Vivo" -->
       <div class="live-label">EN VIVO</div>
 
-      <!-- Reproductor con diseño mejorado -->
       <div class="player-controls">
-        <!-- Botón de reproducción -->
         <ion-button fill="clear" class="play-button" (click)="toggleRadio()">
           <ion-icon [name]="isPlaying ? 'pause-circle' : 'play-circle'"></ion-icon>
         </ion-button>
-
-        <!-- Controles de volumen -->
-        <div class="volume-controls">
-          <ion-icon name="volume-low"></ion-icon>
-          <ion-range min="0" max="100" step="1" [value]="volume" (ionChange)="setVolume($event.detail.value)"
-            vertical="true">
-          </ion-range>
-          <ion-icon name="volume-high"></ion-icon>
-        </div>
       </div>
+
     </div>
 
-
-    <!-- Botones sociales a color -->
     <div class="social-buttons-colored">
       <ion-button fill="clear" href="https://www.facebook.com/HMfuego991fm" target="_blank">
         <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
@@ -68,10 +54,10 @@
     </div>
   </div>
 
-  <!-- Footer -->
-  <ion-footer>
-    <ion-toolbar class="footer">
-      <ion-title class="footer-title">RADIO FUEGO 99.1 FM</ion-title>
-    </ion-toolbar>
-  </ion-footer>
+
+  <!--  <ion-footer>
+      <ion-toolbar class="footer">
+        <ion-title class="footer-title">RADIO FUEGO 99.1 FM</ion-title>
+      </ion-toolbar>
+    </ion-footer> -->
 </ion-content>

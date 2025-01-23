@@ -8,13 +8,23 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
   radio = new Audio('https://rr5100.globalhost1.com/8088/;stream'); // URL del stream de radio
-  isPlaying = false;
+  isPlaying: boolean = false; // Estado de reproducción de la radio
   volume: number = 50; // Porcentaje de volumen inicial (50%)
 
   constructor() {
     this.setVolume(this.volume); // Establecer volumen inicial
   }
+  changeVolume(event: any) {
+    const newVolume = event.detail.value;
+    console.log('Nuevo volumen:', newVolume);
+    // Lógica para ajustar el volumen del audio
+  }
 
+  muteVolume() {
+    this.volume = 0;
+    console.log('Volumen silenciado');
+    // Lógica para silenciar el audio
+  }
   toggleRadio() {
     try {
       if (this.isPlaying) {
