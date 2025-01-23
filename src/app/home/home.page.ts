@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Share } from '@capacitor/share';
+
 
 @Component({
   selector: 'app-home',
@@ -48,19 +50,18 @@ export class HomePage {
     }
   }
 
-  shareApp() {
-    if (navigator.share) {
-      // Usa el Web Share API para compartir contenido
-      navigator.share({
+  async shareApp() {
+    try {
+      await Share.share({
         title: 'Radio Fuego 99.1 FM',
         text: '¡Escucha la mejor música en Radio Fuego 99.1 FM! Desde Zaruma – El Oro.',
-        url: 'https://www.radiofuego991fm.com', // Cambia esto por el enlace de tu app o sitio web
-      })
-        .then(() => console.log('Compartido con éxito'))
-        .catch((error) => console.error('Error al compartir:', error));
-    } else {
-      // Alternativa para navegadores que no soportan Web Share API
-      alert('La funcionalidad de compartir no está soportada en este dispositivo.');
+        url: 'https://hmradiofuego.com/portal/', // Cambia esto por el enlace de tu app o sitio web
+        dialogTitle: 'Compartir Radio Fuego',
+      });
+      console.log('Compartido con éxito');
+    } catch (error) {
+      console.error('Error al compartir:', error);
+      alert('No se pudo compartir el contenido. Intenta nuevamente.');
     }
   }
 }
