@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'sitioweb',
+    loadChildren: () => import('./sitioweb/sitioweb.module').then( m => m.SitiowebPageModule)
   },
+
 ];
 
 @NgModule({

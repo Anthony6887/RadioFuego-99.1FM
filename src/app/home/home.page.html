@@ -1,60 +1,62 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>RADIO FUEGO 99.1 FM</ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="share-social"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <!-- Header dentro del contenido -->
+  <div class="custom-content-header">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>RADIO FUEGO 99.1 FM</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="shareApp()">
+          <ion-icon name="share-social"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+
+  <!-- Contenido principal -->
   <div class="background">
     <img src="assets/micro.jpg" alt="Micrófono" class="background-image" />
     <div class="overlay"></div>
     <div class="content">
-      <img src="assets/LOGO_f.png" alt="Logo RADIO FUEGO 99.1 FM" class="logo" />
+      <div class="logo-container">
+        <img src="../../assets/icon/fuego.png" alt="Logo RADIO FUEGO 99.1 FM" class="logo" />
+      </div>
       <h2>99.1 FM</h2>
       <p>Desde Zaruma – El Oro</p>
 
       <!-- Texto "En Vivo" -->
       <div class="live-label">EN VIVO</div>
 
-      <!-- Botón de reproducción -->
-      <ion-button fill="clear" class="play-button" (click)="toggleRadio()">
-        <ion-icon [name]="isPlaying ? 'pause-circle' : 'play-circle'"></ion-icon>
-      </ion-button>
+      <!-- Reproductor con diseño mejorado -->
+      <div class="player-controls">
+        <!-- Botón de reproducción -->
+        <ion-button fill="clear" class="play-button" (click)="toggleRadio()">
+          <ion-icon [name]="isPlaying ? 'pause-circle' : 'play-circle'"></ion-icon>
+        </ion-button>
 
-      <!-- Controles de volumen -->
-      <div class="volume-controls">
-        <ion-icon name="volume-low"></ion-icon>
-        <ion-range
-  min="0"
-  max="100"
-  step="1"
-  [value]="volume"
-  (ionChange)="setVolume($event.detail.value)">
-</ion-range>
-        <ion-icon name="volume-high"></ion-icon>
+        <!-- Controles de volumen -->
+        <div class="volume-controls">
+          <ion-icon name="volume-low"></ion-icon>
+          <ion-range min="0" max="100" step="1" [value]="volume" (ionChange)="setVolume($event.detail.value)"
+            vertical="true">
+          </ion-range>
+          <ion-icon name="volume-high"></ion-icon>
+        </div>
       </div>
     </div>
 
-    <!-- Botones sociales -->
-    <div class="social-buttons">
+
+    <!-- Botones sociales a color -->
+    <div class="social-buttons-colored">
       <ion-button fill="clear" href="https://www.facebook.com/HMfuego991fm" target="_blank">
         <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
       </ion-button>
       <ion-button fill="clear" href="https://www.instagram.com/hmradiofuego/" target="_blank">
         <ion-icon slot="icon-only" name="logo-instagram"></ion-icon>
       </ion-button>
-      <ion-button
-        fill="clear"
-        href="https://api.whatsapp.com/send/?phone=593997047035&text&type=phone_number&app_absent=0"
-        target="_blank">
+      <ion-button fill="clear"
+        href="https://api.whatsapp.com/send/?phone=593997047035&text&type=phone_number&app_absent=0" target="_blank">
         <ion-icon slot="icon-only" name="logo-whatsapp"></ion-icon>
       </ion-button>
       <ion-button fill="clear" href="https://www.tiktok.com/@hmradiofuego" target="_blank">
@@ -65,4 +67,11 @@
       </ion-button>
     </div>
   </div>
+
+  <!-- Footer -->
+  <ion-footer>
+    <ion-toolbar class="footer">
+      <ion-title class="footer-title">RADIO FUEGO 99.1 FM</ion-title>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
